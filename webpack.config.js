@@ -1,6 +1,8 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 let mode = 'development';
@@ -56,6 +58,13 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html'
     }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'src/favicons/'),
+        },
+      ]
+    })
   ],
 
   resolve: {
@@ -71,5 +80,7 @@ module.exports = {
   devServer: { 
     contentBase: './dist',
     hot: true,
+    overlay: true,
+    stats: 'minimal',
   },
 };
