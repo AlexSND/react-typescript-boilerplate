@@ -14,10 +14,10 @@ if (process.env.NODE_ENV === 'production') {
 module.exports = {
   mode: mode,
   target: target,
-
+  
   output: {
     path: path.resolve(__dirname, 'dist'),
-    assetModuleFilename: 'images/[hash][ext]',
+    assetModuleFilename: 'images/[hash][ext][query]',
   },
 
   module: {
@@ -71,5 +71,6 @@ module.exports = {
   devServer: { 
     contentBase: './dist',
     hot: true,
+    historyApiFallback: true,
   },
 };
