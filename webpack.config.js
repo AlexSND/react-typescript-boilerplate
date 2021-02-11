@@ -2,6 +2,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const DotenvWebpack = require('dotenv-webpack');
 
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
@@ -53,6 +54,7 @@ module.exports = {
   },
 
   plugins: [
+    new DotenvWebpack(),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
@@ -75,9 +77,9 @@ module.exports = {
       images: path.resolve(__dirname, 'src/images/'),
     }
   },
-  
+
   devtool: mode === 'development' ? 'source-map' : false,
-  devServer: { 
+  devServer: {
     contentBase: './dist',
     hot: true,
     overlay: true,
