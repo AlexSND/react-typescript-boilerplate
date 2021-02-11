@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import './styles/style.scss';
+import Example from 'components/Example';
+import 'styles/style.scss';
 
 const App: React.FC = () => (
   <>
@@ -14,10 +15,7 @@ const App: React.FC = () => (
       <link rel="manifest" href="/site.webmanifest" />
       <title>React boilerplate</title>
     </Helmet>
-    <h1>
-      Happy coding!
-      <span role="img" aria-label="emoji">😎</span>
-    </h1>
+    <Example />
   </>
 );
 
