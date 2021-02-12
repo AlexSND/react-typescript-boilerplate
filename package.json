@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack serve",
-    "build": "NODE_ENV=production webpack"
+    "build": "NODE_ENV=production webpack",
+    "component": "ts-node cli/createComponent.ts"
   },
   "devDependencies": {
     "@types/react": "^17.0.1",
@@ -34,6 +35,7 @@
     "sass": "^1.32.6",
     "sass-loader": "^10.1.1",
     "ts-loader": "^8.0.15",
+    "ts-node": "^9.1.1",
     "typescript": "^4.1.3",
     "webpack": "^5.20.2",
     "webpack-cli": "^4.5.0",
