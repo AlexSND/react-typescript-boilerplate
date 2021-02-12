@@ -70,7 +70,7 @@ module.exports = {
   ],
 
   resolve: {
-    extensions: ['.js', 'ts', '.jsx', '.tsx'],
+    extensions: ['.js', '.ts', '.jsx', '.tsx'],
     alias: {
       components: path.resolve(__dirname, 'src/components/'),
       styles: path.resolve(__dirname, 'src/styles/'),
