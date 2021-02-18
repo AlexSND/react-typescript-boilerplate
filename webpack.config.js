@@ -34,6 +34,7 @@ module.exports = {
       },
       {
         test: /\.(s[ac]|c)ss/i,
+        exclude: /\.module.(s[ac]|c)ss/i,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
@@ -42,6 +43,28 @@ module.exports = {
             }
           },
           'css-loader',
+          'postcss-loader',
+          'sass-loader',
+        ],
+      },
+      {
+        test: /\.module.(s[ac]|c)ss/i,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: '',
+            }
+          },
+          {
+            loader: "css-loader",
+            options: {
+              modules: {
+                exportLocalsConvention: 'camelCase',
+                localIdentName: `${mode === 'production' ? '[hash:base64]' : '[name]__[local]--[hash:base64:5]'}`,
+              },
+            },
+          },
           'postcss-loader',
           'sass-loader',
         ],

@@ -15,7 +15,7 @@ const App: React.FC = () => (
       <link rel="manifest" href="/site.webmanifest" />
       <title>React boilerplate</title>
     </Helmet>
-    <Example />
+    <Example text="Happy coding!" />
   </>
 );
 

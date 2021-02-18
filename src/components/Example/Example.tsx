@@ -1,11 +1,21 @@
 import React from 'react';
-import './Example.scss';
+import ReactLogo from 'images/React-logo.svg';
+import styles from './Example.module.scss';
 
-const Example: React.FC = () => (
-  <h1>
-    Happy coding!
-    <span role="img" aria-label="emoji">😎</span>
-  </h1>
+interface Props {
+  text: string
+}
+
+const Example = ({ text }: Props) => (
+  <div className={styles.wrapper}>
+    <h1>
+      {text}
+      <span role="img" aria-label="emoji">😎</span>
+    </h1>
+    <div className={styles.reactLogo}>
+      <img src={ReactLogo} alt="logo" />
+    </div>
+  </div>
 );
 
 export default Example;
