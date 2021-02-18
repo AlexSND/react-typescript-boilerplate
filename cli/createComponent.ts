@@ -10,7 +10,7 @@ if (args.length) {
   const componentName = getComponentName(componentPath);
   createComponent(dirPath, componentName);
 } else {
-  console.log('Сomponent name required');
+  console.log('Сomponent name required!');
   process.exit(0);
 };
 
@@ -56,7 +56,7 @@ function createDir(dir: string): void {
 
 function createFiles(dir: string, name: string) {
   // create scss file
-  fs.writeFile(path.join(dir, `${name}.scss`), '', error => {
+  fs.writeFile(path.join(dir, `${name}.module.scss`), '', error => {
     if (error) {
       console.log(error);
     } else {
@@ -67,9 +67,9 @@ function createFiles(dir: string, name: string) {
   // create component file
   const componentFileContent =
     `import React from 'react';\n`
-    + `import './${name}.scss';\n`
+    + `import styles from './${name}.module.scss';\n`
     + `\n`
-    + `const ${name}: React.FC = () => (\n`
+    + `const ${name} = () => (\n`
     + `  <h1>\n`
     + `    ${name} component work!\n`
     + `  </h1>\n`
