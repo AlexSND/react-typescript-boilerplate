@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactLogo from 'images/React-logo.svg';
+import ReactLogo from 'images/ReactLogo.svg';
 import styles from './Example.module.scss';
 
 interface Props {
