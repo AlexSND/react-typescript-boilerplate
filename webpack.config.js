@@ -107,5 +107,6 @@ module.exports = {
     hot: true,
     overlay: true,
     stats: 'minimal',
+    host: '0.0.0.0',
   },
 };
